@@ -1,0 +1,33 @@
+{
+    "timeZone": "Asia/Kolkata",
+    "dependencies": {},
+    "exceptionLogging": "STACKDRIVER",
+    "oauthScopes": [
+      "https://www.googleapis.com/auth/gmail.readonly",
+      "https://www.googleapis.com/auth/script.external_request",
+      "https://www.googleapis.com/auth/script.locale",
+      "https://www.googleapis.com/auth/script.scriptapp"
+    ],
+    "runtimeVersion": "V8",
+    "addOns": {
+      "common": {
+        "name": "Email Summarizer",
+        "logoUrl": "https://example.com/logo.png",
+        "layoutProperties": {
+          "primaryColor": "#2F80ED"
+        }
+      },
+      "gmail": {
+        "homepageTrigger": {
+          "runFunction": "buildAddOnHome"
+        },
+        "contextualTriggers": [
+          {
+            "unconditional": {},
+            "onTriggerFunction": "onGmailMessageOpen"
+          }
+        ]
+      }
+    }
+  }
+  
